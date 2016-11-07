@@ -1,0 +1,21 @@
+<h1>Score</h1>
+<p>Your guess was <%= @attempt %></p>
+
+<p>You answered in <%=@result[:time].round(2) %> seconds</p>
+
+<p>Your score is <%=@result[:score]%> </p>
+
+<%=link_to "Play again", game_path %>
+
+<p>Translation: <%= @result[:translation] %></p>
+
+<p>Message: <%= @result[:message] %> </p>
+
+<p>Total score <%= @total_score %></p>
+
+<p>Score history</p>
+<ol>
+<% @scores_history.each do |score| %>
+  <li><%= score.round(2) %></li>
+<% end %>
+</ol>

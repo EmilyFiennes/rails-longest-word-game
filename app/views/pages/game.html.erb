@@ -1,0 +1,14 @@
+<h1>New game</h1>
+
+<%= @grid %>
+
+<form action="/score" method="get">
+  <input type="text" name="guess" placeholder="Give me your best guess...">
+  <input type="hidden" name="start_time" value="<%= @start_time %>">
+  <input type="hidden" name="grid" value="<%= @grid.join() %>">
+  <input type="submit">
+</form>
+
+
+<button><%= link_to "Log out", sessions_destroy_path, method: :post %></button>
+
